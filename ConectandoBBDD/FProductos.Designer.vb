@@ -23,11 +23,11 @@ Partial Class FProductos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FProductos))
         Dim PrecioLabel As System.Windows.Forms.Label
         Dim TipoLabel As System.Windows.Forms.Label
         Dim DescripcionLabel As System.Windows.Forms.Label
         Dim CodigoLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FProductos))
         Me.ProductosBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -62,6 +62,46 @@ Partial Class FProductos
         CType(Me.PruebaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'PrecioLabel
+        '
+        PrecioLabel.AutoSize = True
+        PrecioLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        PrecioLabel.Location = New System.Drawing.Point(339, 238)
+        PrecioLabel.Name = "PrecioLabel"
+        PrecioLabel.Size = New System.Drawing.Size(47, 13)
+        PrecioLabel.TabIndex = 8
+        PrecioLabel.Text = "Precio:"
+        '
+        'TipoLabel
+        '
+        TipoLabel.AutoSize = True
+        TipoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        TipoLabel.Location = New System.Drawing.Point(339, 212)
+        TipoLabel.Name = "TipoLabel"
+        TipoLabel.Size = New System.Drawing.Size(36, 13)
+        TipoLabel.TabIndex = 6
+        TipoLabel.Text = "Tipo:"
+        '
+        'DescripcionLabel
+        '
+        DescripcionLabel.AutoSize = True
+        DescripcionLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DescripcionLabel.Location = New System.Drawing.Point(339, 186)
+        DescripcionLabel.Name = "DescripcionLabel"
+        DescripcionLabel.Size = New System.Drawing.Size(78, 13)
+        DescripcionLabel.TabIndex = 4
+        DescripcionLabel.Text = "Descripcion:"
+        '
+        'CodigoLabel
+        '
+        CodigoLabel.AutoSize = True
+        CodigoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CodigoLabel.Location = New System.Drawing.Point(339, 160)
+        CodigoLabel.Name = "CodigoLabel"
+        CodigoLabel.Size = New System.Drawing.Size(50, 13)
+        CodigoLabel.TabIndex = 2
+        CodigoLabel.Text = "Codigo:"
         '
         'ProductosBindingNavigator
         '
@@ -208,16 +248,6 @@ Partial Class FProductos
         Me.PrecioTextBox.Size = New System.Drawing.Size(100, 20)
         Me.PrecioTextBox.TabIndex = 9
         '
-        'PrecioLabel
-        '
-        PrecioLabel.AutoSize = True
-        PrecioLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        PrecioLabel.Location = New System.Drawing.Point(339, 238)
-        PrecioLabel.Name = "PrecioLabel"
-        PrecioLabel.Size = New System.Drawing.Size(47, 13)
-        PrecioLabel.TabIndex = 8
-        PrecioLabel.Text = "Precio:"
-        '
         'TipoTextBox
         '
         Me.TipoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductosBindingSource, "Tipo", True))
@@ -225,16 +255,6 @@ Partial Class FProductos
         Me.TipoTextBox.Name = "TipoTextBox"
         Me.TipoTextBox.Size = New System.Drawing.Size(100, 20)
         Me.TipoTextBox.TabIndex = 7
-        '
-        'TipoLabel
-        '
-        TipoLabel.AutoSize = True
-        TipoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        TipoLabel.Location = New System.Drawing.Point(339, 212)
-        TipoLabel.Name = "TipoLabel"
-        TipoLabel.Size = New System.Drawing.Size(36, 13)
-        TipoLabel.TabIndex = 6
-        TipoLabel.Text = "Tipo:"
         '
         'DescripcionTextBox
         '
@@ -244,16 +264,6 @@ Partial Class FProductos
         Me.DescripcionTextBox.Size = New System.Drawing.Size(100, 20)
         Me.DescripcionTextBox.TabIndex = 5
         '
-        'DescripcionLabel
-        '
-        DescripcionLabel.AutoSize = True
-        DescripcionLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DescripcionLabel.Location = New System.Drawing.Point(339, 186)
-        DescripcionLabel.Name = "DescripcionLabel"
-        DescripcionLabel.Size = New System.Drawing.Size(78, 13)
-        DescripcionLabel.TabIndex = 4
-        DescripcionLabel.Text = "Descripcion:"
-        '
         'CodigoTextBox
         '
         Me.CodigoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductosBindingSource, "Codigo", True))
@@ -261,16 +271,6 @@ Partial Class FProductos
         Me.CodigoTextBox.Name = "CodigoTextBox"
         Me.CodigoTextBox.Size = New System.Drawing.Size(100, 20)
         Me.CodigoTextBox.TabIndex = 3
-        '
-        'CodigoLabel
-        '
-        CodigoLabel.AutoSize = True
-        CodigoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        CodigoLabel.Location = New System.Drawing.Point(339, 160)
-        CodigoLabel.Name = "CodigoLabel"
-        CodigoLabel.Size = New System.Drawing.Size(50, 13)
-        CodigoLabel.TabIndex = 2
-        CodigoLabel.Text = "Codigo:"
         '
         'DataGridViewTextBoxColumn3
         '
