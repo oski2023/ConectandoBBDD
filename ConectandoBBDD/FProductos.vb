@@ -1,4 +1,4 @@
-﻿Public Class Form1
+﻿Public Class FProductos
     Private Sub ProductosBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles ProductosBindingNavigatorSaveItem.Click
         Me.Validate()
         Me.ProductosBindingSource.EndEdit()
