@@ -24,10 +24,10 @@ Partial Class FProductos
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim PrecioLabel As System.Windows.Forms.Label
-        Dim TipoLabel As System.Windows.Forms.Label
         Dim DescripcionLabel As System.Windows.Forms.Label
         Dim CodigoLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FProductos))
+        Dim TipoLabel1 As System.Windows.Forms.Label
         Me.ProductosBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -46,16 +46,20 @@ Partial Class FProductos
         Me.ProductosTableAdapter = New ConectandoBBDD.pruebaDataSetTableAdapters.ProductosTableAdapter()
         Me.TableAdapterManager = New ConectandoBBDD.pruebaDataSetTableAdapters.TableAdapterManager()
         Me.PrecioTextBox = New System.Windows.Forms.TextBox()
-        Me.TipoTextBox = New System.Windows.Forms.TextBox()
         Me.DescripcionTextBox = New System.Windows.Forms.TextBox()
         Me.CodigoTextBox = New System.Windows.Forms.TextBox()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProductosDataGridView = New System.Windows.Forms.DataGridView()
+        Me.BNuevo = New System.Windows.Forms.Button()
+        Me.BEliminar = New System.Windows.Forms.Button()
+        Me.BGuardar = New System.Windows.Forms.Button()
+        Me.BCancelar = New System.Windows.Forms.Button()
+        Me.TipoComboBox = New System.Windows.Forms.ComboBox()
         PrecioLabel = New System.Windows.Forms.Label()
-        TipoLabel = New System.Windows.Forms.Label()
         DescripcionLabel = New System.Windows.Forms.Label()
         CodigoLabel = New System.Windows.Forms.Label()
+        TipoLabel1 = New System.Windows.Forms.Label()
         CType(Me.ProductosBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ProductosBindingNavigator.SuspendLayout()
         CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,27 +71,17 @@ Partial Class FProductos
         '
         PrecioLabel.AutoSize = True
         PrecioLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        PrecioLabel.Location = New System.Drawing.Point(339, 238)
+        PrecioLabel.Location = New System.Drawing.Point(416, 162)
         PrecioLabel.Name = "PrecioLabel"
         PrecioLabel.Size = New System.Drawing.Size(47, 13)
         PrecioLabel.TabIndex = 8
         PrecioLabel.Text = "Precio:"
         '
-        'TipoLabel
-        '
-        TipoLabel.AutoSize = True
-        TipoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        TipoLabel.Location = New System.Drawing.Point(339, 212)
-        TipoLabel.Name = "TipoLabel"
-        TipoLabel.Size = New System.Drawing.Size(36, 13)
-        TipoLabel.TabIndex = 6
-        TipoLabel.Text = "Tipo:"
-        '
         'DescripcionLabel
         '
         DescripcionLabel.AutoSize = True
         DescripcionLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DescripcionLabel.Location = New System.Drawing.Point(339, 186)
+        DescripcionLabel.Location = New System.Drawing.Point(413, 110)
         DescripcionLabel.Name = "DescripcionLabel"
         DescripcionLabel.Size = New System.Drawing.Size(78, 13)
         DescripcionLabel.TabIndex = 4
@@ -97,7 +91,7 @@ Partial Class FProductos
         '
         CodigoLabel.AutoSize = True
         CodigoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        CodigoLabel.Location = New System.Drawing.Point(339, 160)
+        CodigoLabel.Location = New System.Drawing.Point(413, 84)
         CodigoLabel.Name = "CodigoLabel"
         CodigoLabel.Size = New System.Drawing.Size(50, 13)
         CodigoLabel.TabIndex = 2
@@ -118,7 +112,7 @@ Partial Class FProductos
         Me.ProductosBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.ProductosBindingNavigator.Name = "ProductosBindingNavigator"
         Me.ProductosBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.ProductosBindingNavigator.Size = New System.Drawing.Size(800, 25)
+        Me.ProductosBindingNavigator.Size = New System.Drawing.Size(802, 25)
         Me.ProductosBindingNavigator.TabIndex = 0
         Me.ProductosBindingNavigator.Text = "BindingNavigator1"
         '
@@ -243,23 +237,15 @@ Partial Class FProductos
         'PrecioTextBox
         '
         Me.PrecioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductosBindingSource, "Precio", True))
-        Me.PrecioTextBox.Location = New System.Drawing.Point(423, 238)
+        Me.PrecioTextBox.Location = New System.Drawing.Point(497, 162)
         Me.PrecioTextBox.Name = "PrecioTextBox"
         Me.PrecioTextBox.Size = New System.Drawing.Size(100, 20)
         Me.PrecioTextBox.TabIndex = 9
         '
-        'TipoTextBox
-        '
-        Me.TipoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductosBindingSource, "Tipo", True))
-        Me.TipoTextBox.Location = New System.Drawing.Point(423, 212)
-        Me.TipoTextBox.Name = "TipoTextBox"
-        Me.TipoTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.TipoTextBox.TabIndex = 7
-        '
         'DescripcionTextBox
         '
         Me.DescripcionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductosBindingSource, "Descripcion", True))
-        Me.DescripcionTextBox.Location = New System.Drawing.Point(423, 186)
+        Me.DescripcionTextBox.Location = New System.Drawing.Point(497, 110)
         Me.DescripcionTextBox.Name = "DescripcionTextBox"
         Me.DescripcionTextBox.Size = New System.Drawing.Size(100, 20)
         Me.DescripcionTextBox.TabIndex = 5
@@ -267,7 +253,7 @@ Partial Class FProductos
         'CodigoTextBox
         '
         Me.CodigoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductosBindingSource, "Codigo", True))
-        Me.CodigoTextBox.Location = New System.Drawing.Point(423, 160)
+        Me.CodigoTextBox.Location = New System.Drawing.Point(497, 84)
         Me.CodigoTextBox.Name = "CodigoTextBox"
         Me.CodigoTextBox.Size = New System.Drawing.Size(100, 20)
         Me.CodigoTextBox.TabIndex = 3
@@ -295,7 +281,7 @@ Partial Class FProductos
         Me.ProductosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ProductosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
         Me.ProductosDataGridView.DataSource = Me.ProductosBindingSource
-        Me.ProductosDataGridView.Location = New System.Drawing.Point(46, 160)
+        Me.ProductosDataGridView.Location = New System.Drawing.Point(120, 84)
         Me.ProductosDataGridView.Name = "ProductosDataGridView"
         Me.ProductosDataGridView.ReadOnly = True
         Me.ProductosDataGridView.RowHeadersVisible = False
@@ -303,17 +289,78 @@ Partial Class FProductos
         Me.ProductosDataGridView.Size = New System.Drawing.Size(276, 100)
         Me.ProductosDataGridView.TabIndex = 1
         '
+        'BNuevo
+        '
+        Me.BNuevo.Location = New System.Drawing.Point(103, 266)
+        Me.BNuevo.Name = "BNuevo"
+        Me.BNuevo.Size = New System.Drawing.Size(100, 30)
+        Me.BNuevo.TabIndex = 10
+        Me.BNuevo.Text = "Agregar"
+        Me.BNuevo.UseVisualStyleBackColor = True
+        '
+        'BEliminar
+        '
+        Me.BEliminar.Location = New System.Drawing.Point(209, 266)
+        Me.BEliminar.Name = "BEliminar"
+        Me.BEliminar.Size = New System.Drawing.Size(100, 30)
+        Me.BEliminar.TabIndex = 11
+        Me.BEliminar.Text = "Eliminar"
+        Me.BEliminar.UseVisualStyleBackColor = True
+        '
+        'BGuardar
+        '
+        Me.BGuardar.Location = New System.Drawing.Point(315, 266)
+        Me.BGuardar.Name = "BGuardar"
+        Me.BGuardar.Size = New System.Drawing.Size(100, 30)
+        Me.BGuardar.TabIndex = 12
+        Me.BGuardar.Text = "Guardar"
+        Me.BGuardar.UseVisualStyleBackColor = True
+        '
+        'BCancelar
+        '
+        Me.BCancelar.Location = New System.Drawing.Point(421, 266)
+        Me.BCancelar.Name = "BCancelar"
+        Me.BCancelar.Size = New System.Drawing.Size(100, 30)
+        Me.BCancelar.TabIndex = 13
+        Me.BCancelar.Text = "Cancelar"
+        Me.BCancelar.UseVisualStyleBackColor = True
+        '
+        'TipoLabel1
+        '
+        TipoLabel1.AutoSize = True
+        TipoLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        TipoLabel1.Location = New System.Drawing.Point(418, 135)
+        TipoLabel1.Name = "TipoLabel1"
+        TipoLabel1.Size = New System.Drawing.Size(36, 13)
+        TipoLabel1.TabIndex = 14
+        TipoLabel1.Text = "Tipo:"
+        AddHandler TipoLabel1.Click, AddressOf Me.TipoLabel1_Click
+        '
+        'TipoComboBox
+        '
+        Me.TipoComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductosBindingSource, "Tipo", True))
+        Me.TipoComboBox.FormattingEnabled = True
+        Me.TipoComboBox.Items.AddRange(New Object() {"comun", "al huevo", "con carozo"})
+        Me.TipoComboBox.Location = New System.Drawing.Point(497, 135)
+        Me.TipoComboBox.Name = "TipoComboBox"
+        Me.TipoComboBox.Size = New System.Drawing.Size(121, 21)
+        Me.TipoComboBox.TabIndex = 15
+        '
         'FProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(802, 450)
+        Me.Controls.Add(TipoLabel1)
+        Me.Controls.Add(Me.TipoComboBox)
+        Me.Controls.Add(Me.BCancelar)
+        Me.Controls.Add(Me.BGuardar)
+        Me.Controls.Add(Me.BEliminar)
+        Me.Controls.Add(Me.BNuevo)
         Me.Controls.Add(CodigoLabel)
         Me.Controls.Add(Me.CodigoTextBox)
         Me.Controls.Add(DescripcionLabel)
         Me.Controls.Add(Me.DescripcionTextBox)
-        Me.Controls.Add(TipoLabel)
-        Me.Controls.Add(Me.TipoTextBox)
         Me.Controls.Add(PrecioLabel)
         Me.Controls.Add(Me.PrecioTextBox)
         Me.Controls.Add(Me.ProductosDataGridView)
@@ -349,10 +396,14 @@ Partial Class FProductos
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents ProductosBindingNavigatorSaveItem As ToolStripButton
     Friend WithEvents PrecioTextBox As TextBox
-    Friend WithEvents TipoTextBox As TextBox
     Friend WithEvents DescripcionTextBox As TextBox
     Friend WithEvents CodigoTextBox As TextBox
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents ProductosDataGridView As DataGridView
+    Friend WithEvents BNuevo As Button
+    Friend WithEvents BEliminar As Button
+    Friend WithEvents BGuardar As Button
+    Friend WithEvents BCancelar As Button
+    Friend WithEvents TipoComboBox As ComboBox
 End Class
